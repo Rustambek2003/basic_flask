@@ -18,8 +18,14 @@ def hello_world():
 def home():
     return 'Home Page!!'
 
+@app.route('/sum')
+def get_sum():
+    a = request.args.get("a",0)
+    b = request.args.get("b",0)
+    return a + b
+
 # This will run the app on http://localhost:5000
 if __name__ == '__main__':
     # Run the app in local network
-    app.run(host='0.0.0.0', port=8080,debug=True)
+    app.run()
 # get remote 
